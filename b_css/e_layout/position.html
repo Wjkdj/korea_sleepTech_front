@@ -23,12 +23,27 @@
       top: -50px;
     }
 
+    #container {
+      position: relative;
+      background-color: lightcoral;
+      width: 300px;
+      height: 300px;
+    }
+
     #para3 {
-      position: static;
+      /* 상위 요소에서 relative 값을 절대적인 기준으로 봄 */
+      /* 부모 요소가 relative가 아니라면 조상 요소 중 relative 값을 찾아 해당 요소를 기준으로 배치 */
+      position: absolute;
+      background-color: lightblue;
+      left: 100px;
+      top: -50px;
     }
 
     #para4 {
-      position: static;
+      position: fixed;
+      background-color: lightgreen;
+      top: 30px;
+      right: 30px;
     }
   </style>
 </head>
@@ -47,12 +62,20 @@
         : static + 위치값 지정
 
       - absolute
+        : relative 값을 가진 상위요소를 기준으로 위치값 지정
+
       - fixed
+        : 브라우저 창을 기준으로 위치 배치
+        >> 페이지를 스크롤 해도 브라우저를 기준으로 하기때문에 위치값이 고정
   -->
 
   <p id="para1">This is a paragraph</p>
   <p id="para2">This is a paragraph</p>
-  <p id="para3">This is a paragraph</p>
+  <div id="container">
+    <div>
+      <p id="para3">This is a paragraph</p>
+    </div>
+  </div>
   <p id="para4">This is a paragraph</p>
 
 </body>
