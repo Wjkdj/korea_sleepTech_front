@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -42,13 +41,25 @@ h1 {
   width: 100%;
   height: 150px;
   display: inline-block;
-  /* 원근법 지정 속성: 주로 100px에서 1000px 값을 사용하여 원하는 깊이 효과를 지정 */
+  /* 
+    원근법 지정 속성
+    : 주로 100px에서 1000px 값을 사용하여 원하는 깊이 효과를 지정 
+    - 부모 요소에 지정 시 자식 요소(.card-inner)에 3D 효과가 적용
+
+    ? 값이 작을수록 3D 효과각 극명 - 요소들이 더 가까이 있는 것처럼
+    ? 값이 클수록 3D 효과가 부드러워짐 - 요소가 멀리 있는 것 처럼
+  */
   perspective: 1000px;
 }
 
 .card-inner {
   width: 100%;
   height: 100%;
+
+  /* 
+  ? 자식 요소들이 3D 공간 내에서 자신의 위치와 회전 상태를 유지
+  : 
+  */
   transform-style: preserve-3d;
   transition: transfrom 0.5s;
 }
